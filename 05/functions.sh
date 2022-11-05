@@ -3,13 +3,16 @@
 Total_number_of_folders() {
     echo "Total number of folders (including all nested ones) = $(find $1 -type d| wc -l)"
 }
+
 TOP_5_folders() {
     echo "TOP 5 folders of maximum size arranged in descending order (path and size):"
     du -h $1 2>/dev/null | sort -hr | head -5 | awk 'BEGIN{i=1}{printf "%d - %s, %s\n", i, $2, $1; i++}'
 }
+
 Total_number_of_files() {
     echo "Total number of files = $(ls -laR $1 2>/dev/null | grep ^- | wc -l)"
 }
+
 Number_configure_files() {
     echo "Number of:"
     echo "Configuration files (with the .conf extension) = $(find $1 2>/dev/null -type f -name "*.conf" | wc -l | awk '{print $1}')"
@@ -19,6 +22,7 @@ Number_configure_files() {
     echo "Archive files = $(find $1 2>/dev/null -type f -name "*.zip" -o -name "*.7z" -o -name "*.rar" -o -name "*.tar" | wc -l | awk '{print $1}')"
     echo "Symbolic links = $(find $1 2>/dev/null -type l | wc -l | awk '{print $1}')"
 }
+
 Top_ten_files_large_weight() {
     echo "TOP 10 files of maximum size arranged in descending order (path, size and type):"
     for num in {1..10}
@@ -33,6 +37,7 @@ Top_ten_files_large_weight() {
         fi
     done
 }
+
 Top_ten_executables_files() {
     echo "TOP 10 executable files of the maximum size arranged in descending order (path, size and MD5 hash of file)"
     for num in {1..10}
@@ -49,6 +54,7 @@ Top_ten_executables_files() {
         fi
     done
 }
+
 Time_execution_script() {
   end=`date +%s`
   echo "Script execution time (in seconds) = $(($end-$1))"

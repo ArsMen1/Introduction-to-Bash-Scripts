@@ -85,7 +85,7 @@ case $column2_font_color in
     6)
     FRONT_2=$BLACK_F
         color_name_3="black"
-        color_text_3="1";;
+        color_text_3="6";;
     *)
     FRONT_2=$RED_F
     color_name_3="red"
@@ -115,7 +115,7 @@ case $column2_background in
     6)
     BACK_2=$BLACK_B
         color_name_4="black"
-        color_text_4="1";;
+        color_text_4="6";;
     *)
     BACK_2=$BLUE_B
     color_name_4="blue"
