@@ -36,3 +36,6 @@ export SPACE_ROOT_FREE="$(df -hmT | awk '/\/$/ {printf "%.2f MB", $5/1024}')"
 
 chmod +x ./check.sh
 bash check.sh
+
+
+test
